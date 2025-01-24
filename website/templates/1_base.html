@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            crossorigin="anonymous"
+        />
+        <link 
+            rel="stylesheet" 
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&display=swap"
+        />
+        <link 
+            rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link 
+            rel="stylesheet" 
+            href="{{ url_for('static', filename='styles.css') }}"
+        />
+        <link 
+            rel="icon" 
+            href="{{ url_for('static', filename='favicon.ico') }}" 
+            type="image/x-icon"
+        />
+  
+      <title>{% block title %}Home{% endblock %}</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button 
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-toggle="collapse" 
+                    data-target="#navbar"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" id="home" href="/home">About Me</a>
+                        <a class="nav-item nav-link" id="resume" href="/resume">Resume</a>
+                        <a class="nav-item nav-link" id="projects" href="/my_projects">Projects</a>
+                        <a class="nav-item nav-link" id="contact" href="/contact_info">Contact Me</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <br>
+            {% block content %}
+            {% endblock %}
+            <br>
+        </div>
+
+        <footer>
+            <p>Created by Dominic Galgano</p>
+            <p><a href="https://github.com/The1Dominater" style="color: #fff;">Github</a> | <a href="/contact_info" style="color: #fff;">Contact Me</a></p>
+        </footer>
+        
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+      ></script>
+      <script 
+        type="Text/javascript"
+        src="{{ url_for('static', filename='index.js')}}"
+      ></script>
+    </body>
+</html>
