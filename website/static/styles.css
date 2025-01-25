@@ -77,6 +77,17 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow for style */
 }
 
+.big-fig figure img{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align the image and caption */
+    text-align: center;
+    width: 100%;
+    height: auto; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .section .text {
     flex: 2; /* Allow the text to take up more space */
     min-width: 300px; /* Ensure text doesn't shrink too much */
