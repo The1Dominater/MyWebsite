@@ -2,30 +2,105 @@
 
 {% block content %}
 <div class="container">
-    <!-- First Section: Image on the left -->
     <div class="section">
-        <img src="path-to-your-image1.jpg" alt="Image 1">
+        <figure>
+            <img src="{{ url_for('static', filename='images/BoatWithVince.jpg') }}" alt="BoatWithVince.jpg">
+            <figcaption>My brother Vince and I on our Dad's fishing boat (June 2023)</figcaption>
+        </figure>
         <div class="text">
-            <h2>About Me</h2>
-            <p>This is the first section of the about me page. I can write a bit about myself here, sharing what I enjoy doing, what I'm passionate about, and any fun facts that people might like to know!</p>
+            <h2><strong>The Fam</strong>👨‍👦‍👧‍👩‍👧‍👦</h2>
+            <p>
+                Born and raised in Colorado, I am the oldest of four siblings. 
+                We have two dogs, Daisy and Stuby, and a couple of chickens in the coop in our backyard.
+                My mom is a school nurse and my dad is a contractor and a commerical fisherman in the summer.
+            </p>
+            <p>
+                Since I started high school in 2016, I have been going to Alaska each summer to commercially fish for sockeye salmon 🐟.
+                My dad runs his own boat, <i>The High Flyer</i>, a 32-foot aluminum bow-picker, in the Nushagak River just above the Aleutian Island chain.
+                In the picture, Vince, my younger brother, and I have just finished setting out the 300-yard gillnet.
+                Commercial fishing in Alaska has been a great experience for me, as it taught me how rewarding hard work can be.
+                (It also helped that it paid enough to get me through college!) However, now that I have graduated, 
+                my time on the boat has come to an end, and my younger sister Natalie has already replaced me 😢!
+            </p>
         </div>
     </div>
 
-    <!-- Second Section: Image on the right -->
-    <div class="section text-right">
+    <div class="section">
         <div class="text">
-            <h2>My Journey</h2>
-            <p>Here’s a bit more about how I got to where I am today. Whether it’s my career path, my studies, or life experiences, this section will give you a deeper insight into my background.</p>
+            <h2><strong>My Journey in Computer Science</strong>👨‍💻</h2>
+            <p>
+                When I started my degree in Computer Science at Regis University, 
+                all I really wanted was to make <i>Minecraft</i> mods and only
+                went to school based on my parents advice. After getting past the 
+                introductory courses, I my interested was peaked while taking classes
+                like Computational Theory, Operating Systems, and Paradigms of Programming languages.
+                I realized how the field of computer science and the power of software
+                extended beyond video games and phone apps. It allows people to spread ideas
+                faster than ever before, solve problems which previously were to complex to solve,
+                and, of course, make amazing art(😮‍💨 like video games).
+            </p>
+            <p>
+                Realizing Regis's Computer Science department was limited by its size, 
+                I transferred to CU Boudler to
+                gain access to a greater variety of courses and often with greater depth to them.
+                At CU I took introductory courses in quatum computing, robotics, cyber-security,
+                and bio-networking. However, the classes I enjoyed the most, system administration
+                and data center computing, used big machines called Super Computers
+                (which were actually a bunch of smaller nodes working together).
+            </p>
         </div>
-        <img src="path-to-your-image2.jpg" alt="Image 2">
+        <figure>
+            <img src="{{ url_for('static', filename='images/CUEngineeringExpo.jpg') }}" alt="CUEngineeringExpo.jpg">
+            <figcaption>My senior project team and I presenting our design for software based PUF IDs (May 2024).</figcaption>
+        </figure>
     </div>
 
-    <!-- Third Section: Image on the left -->
     <div class="section">
-        <img src="path-to-your-image3.jpg" alt="Image 3">
+        <figure>
+            <img src="{{ url_for('static', filename='images/NRELWindTurbine.jpg') }}" alt="NRELWindTurbine.jpg">
+            <figcaption>Me standing in front of the a decomissioned wind turbine blade at NREL's test site in Boulder, CO (July 2024)</figcaption>
+        </figure>
         <div class="text">
-            <h2>Hobbies & Interests</h2>
-            <p>In this section, I’ll talk about the things I love to do in my free time. From hobbies like photography, gaming, or traveling, this is where I let you in on what brings me joy!</p>
+            <p>
+                During my senior year at CU Boulder, I worked with FESTO and senior project team to 
+                develop a software based system for generating unique ids for a specific device based
+                on irrepicable defects in the device's memory. The idea was to pull initialize binary
+                values from the device's memory on start up and pplug them into a Physcially Unclonable Function(PUF)
+                in order to generate a unique id only which could only be generated by the given device. Then it would
+                send the id to a web based Solidity contract where a business or organization could grant the device 
+                access to their service(s) or system(s). I learned a lot about planning and building, and 
+                then re-planning when everything went wrong🔥📉🤔.
+            </p>
+            <p>
+                Most recently, I interned with the National Renewable Energy Labratory through the SULI program.
+                I worked within the Power Systems Engineering Center to help develop a LLM for analyzing power system
+                question a utility company may face and assist the utility operators in addressing the problem. My
+                mentor, Rishab Jain, and I focused on developing an multi-agent AI system where each AI agent was an
+                expert in a specific domain, such as system maintance, cost analysis, and human comfort. The expert 
+                agents then would bounce ideas off each other in an attempt to build a more robust and thought out
+                solution.
+            </p>
+        </div>
+    </div>
+
+    <div class="section">
+        <figure>
+            <img src="{{ url_for('static', filename='images/GoodbyeGekko.gif') }}" alt="GoodbyeGekko.gif">
+            <figcaption>A clip of me playing one of my favorite games Valorant</figcaption>
+        </figure>
+        <div class="text">
+            <h2><strong>Interests</strong>🎮⛷️🍝</h2>
+            <p>
+                I love video games, especially FPS like <i>Valorant</i>, <i>Tarkov</i>, and <i>Arma</i>; however, I also have enjoyed playing
+                various adventure and story games like <i>Cities: Skylines</i>, <i>It Takes Two</i>, and <i>STAR WARS Jedi: Fallen Order</i>.
+                It's always fun to hop on an play with friends and kick some ass (😔 We lose a lot). 
+            </p>
+            <p>
+                My other interests include building LEGOs, skiing with the fam, watching movies with friends,
+                and eating pretty much anything. Additionally, I often am working on my Jeep and helping my
+                parents setup the various tech systems they need help with from the printer to the security
+                cameras to the smart TV in the living room. Overall, I like solving problems and having fun😎.
+            </p>
         </div>
     </div>
 </div>

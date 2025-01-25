@@ -36,7 +36,11 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark shadow-lg">
+                <a class="navbar-brand d-flex align-items-center" href="/home">
+                    <img src="{{ url_for('static', filename='images/PKLogo.png') }}" alt="Company Logo" width="40" height="40" class="mr-2">
+                    <span>DWG</span>
+                </a>
                 <button 
                     class="navbar-toggler" 
                     type="button" 
@@ -46,7 +50,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
-                    <div class="navbar-nav">
+                    <div class="navbar-nav ml-auto">
                         <a class="nav-item nav-link" id="home" href="/home">About Me</a>
                         <a class="nav-item nav-link" id="resume" href="/resume">Resume</a>
                         <a class="nav-item nav-link" id="projects" href="/my_projects">Projects</a>
@@ -64,8 +68,20 @@
         </div>
 
         <footer>
-            <p>Created by Dominic Galgano</p>
-            <p><a href="https://github.com/The1Dominater" style="color: #fff;">Github</a> | <a href="/contact_info" style="color: #fff;">Contact Me</a></p>
+            <p>Built by Dominic Galgano</p>
+            <p>
+                <a href="https://github.com/The1Dominater" target="_blank">
+                    <i class="fa-brands fa-github" style="font-size: 24px; color: white;"></i>
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://www.linkedin.com/in/dominic-galgano-97128b156/" target="_blank">
+                    <i class="fa-brands fa-linkedin" style="font-size: 24px; color: white;"></i>
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/contact_info" target="_blank">
+                    <i class="fa-solid fa-envelope" style="font-size: 24px; color: white;"></i>
+                </a>
+            </p>
         </footer>
         
         <script

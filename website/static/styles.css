@@ -8,16 +8,33 @@ body {
     display: flex;
     flex-direction: column; /* Stack content and footer */
 }
-nav {
+/* Add a shadow effect to the navbar */
+.navbar {
     background-color: #333;
-    color: white;
-    padding: 15px;
-    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
 }
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
+
+/* Style the navbar brand with logo and name */
+.navbar-brand {
+    font-size: 1.25rem; /* Slightly larger font for the company name */
+    font-weight: bold;
+    color: white; /* Adjust color to match your theme */
+    text-decoration: none; /* Remove underline */
+}
+
+.navbar-brand img {
+    border-radius: 50%; /* Optional: Make the logo circular */
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem; /* Standard font size for nav links */
+    margin-left: 10px;
+    color: white; /* Adjust to your theme color */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFD700; /* Add a hover effect (e.g., gold color) */
 }
 .container {
     display: flex;
@@ -37,17 +54,40 @@ footer {
 
 .section {
     display: flex;
+    flex-wrap: wrap; /* Allow wrapping for better responsiveness */
+    align-items: flex-start;
+    gap: 20px; /* Add consistent spacing between elements */
     margin-bottom: 40px;
-    align-items: center;
 }
-.section img {
-    width: 40%;
-    margin-right: 20px;
+
+.section figure {
+    flex: 1 1 300px; /* Allow the figure to take up space and shrink if needed */
+    max-width: 40%; /* Limit the width */
+    margin: 0; /* Remove default margins */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align the image and caption */
+    text-align: center; /* Center-align text within the figure */
 }
-.section.text-right img {
-    margin-right: 0;
-    margin-left: 20px;
+
+.section figure img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow for style */
 }
+
 .section .text {
-    flex: 1;
+    flex: 2; /* Allow the text to take up more space */
+    min-width: 300px; /* Ensure text doesn't shrink too much */
+}
+
+figcaption {
+    color: rgb(128, 128, 128); /* Lighter gray for the caption */
+    font-size: 0.9em; /* Slightly smaller font size */
+    margin-top: 10px; /* Add space above the caption */
+}
+.pdf {
+    width: 100%;
+    aspect-ratio: 4 / 3;
 }

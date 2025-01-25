@@ -2,6 +2,18 @@
 
 {% block content %}
 <div>
-    <p>my projects</p>
+    <h1 style="margin-left: 0; font-size: 3.0em;"><strong>My Projects</strong></h1>
+    <p style="text-align: center;">Last Updated: 1/24/2025</p>
+</div>
+<div>
+    <p style="text-align: center;">
+        Check out my GitHub repos <a href="https://github.com/The1Dominater">here</a>
+    </p>
+</div>
+<div>
+    <figure>
+        <img src="{{ url_for('static', filename='images/ConstructionProject.jpg') }}" alt="ConstructionProject.jpg">
+        <figcaption>AI generate image. All credit to DeepAI Inc. image generator at <a href="https://deepai.org/machine-learning-model/fantasy-world-generator">deepai.org</a></figcaption>
+    </figure>
 </div>
 {% endblock %}
