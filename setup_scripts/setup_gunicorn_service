@@ -1,0 +1,32 @@
+#!/bin/bash
+### Creates a service to restart/manage the MyWebsite Flask app
+
+# Step 0(optional): Remove any existing service with the same name
+sudo rm /etc/systemd/system/mywebsite.service
+# Step 1(optional): Create a file for the service 
+sudo touch /etc/systemd/system/mywebsite.service
+# Step 2: Added service details into the file
+echo '[Unit]
+Description=Gunicorn instance to serve Flask app
+After=network.target
+
+[Service]
+User=web-manager
+Group=www-data
+WorkingDirectory=/home/web-manager/MyWebsite
+Environment="PATH/home/web-manager/env/mywebsite/bin"
+ExecStart=/home/web-manager/env/mywebsite/bin/gunicorn --workers 1 --bind unix:mywebsite.sock -m 007 app_wsgi:app
+
+[Install]
+WantedBy=multi-user.taget' | sudo tee -a /etc/systemd/system/mywebsite.service
+
+# Step 3: Start/Restart serivce
+sudo systemctl restart mywebsite.service
+
+### Extra hints
+# Use this to make it so the service runs every time the device starts up
+#sudo systemctl enable mywebsite.service
+# If there is an error starting service, use this to reloead systemctl 
+#sudo systemctl daemon-reload
+# Test if gunicorn works on its own
+#gunicorn --bind 0.0.0.0:5000 app_wsgi:app

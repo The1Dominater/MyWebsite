@@ -1,0 +1,29 @@
+#!/bin/bash
+### Creates a service to restart/manage the MyWebsite Flask app
+
+# Step 1: Install nginx
+sudo apt install nginx -y
+
+# Step 1.5(optional): Remove existing config file
+sudo rm /etc/nginx/sites-available/mywebsite.conf
+
+# Step 2: Setup configuration file
+echo 'server {
+        listen 80;
+
+        location / {
+            include proxy_params;
+            proxy_pass http://unix:/home/web-manager/MyWebsite/mywebsite.sock;
+        }
+}' | sudo tee -a /etc/nginx/sites-available/mywebsite.conf
+
+# Step 3: Publish new configs to nginx server using symbolic link
+sudo ln -s /etc/nginx/sites-available/mywebsite.conf /etc/nginx/sites-enabled/
+
+# Step 4: Restart nginx service to update configs
+sudo systemctl restart nginx
+
+### Extra hints
+# Check if the nginx config file works using
+#sudo nginx -t
+# Make sure to remove the default config from /etc/nginx/sites-enabled/

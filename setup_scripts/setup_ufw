@@ -1,0 +1,16 @@
+#!/bin/bash
+### Setup the Uncomplicated Firewall
+
+# Step 1: Install ufw
+sudo apt install ufw -y
+# Enable and start ufw if needed
+#sudo systemctl enable ufw
+#sudo systemctl restart ufw
+
+# Step 2: Allow ssh and nginx through the firewall
+sudo ufw allow "Nginx Full"
+sudo ufw allow ssh
+
+# Step 3: Enable and restart ufw
+sudo ufw enable
+sudo systemctl restart ufw
