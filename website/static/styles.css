@@ -1,3 +1,4 @@
+/* For base template */
 html, body {
     height: 100%; /* Ensure the full height is taken up */
 }
@@ -14,7 +15,6 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 10px 20px;
 }
-
 /* Style the navbar brand with logo and name */
 .navbar-brand {
     font-size: 1.25rem; /* Slightly larger font for the company name */
@@ -22,19 +22,23 @@ body {
     color: white; /* Adjust color to match your theme */
     text-decoration: none; /* Remove underline */
 }
-
 .navbar-brand img {
     border-radius: 50%; /* Optional: Make the logo circular */
 }
-
 .navbar-nav .nav-link {
     font-size: 1rem; /* Standard font size for nav links */
     margin-left: 10px;
     color: white; /* Adjust to your theme color */
 }
-
 .navbar-nav .nav-link:hover {
     color: #FFD700; /* Add a hover effect (e.g., gold color) */
+}
+#flash-messages {
+    position: sticky;
+    width: 100%;
+}
+.alert {
+    margin-bottom: 5px; /* Space between multiple alerts */
 }
 .container {
     display: flex;
@@ -52,6 +56,7 @@ footer {
     position: relative; /* Keep it in the normal document flow */
 }
 
+/* For "About Me" page */
 .section {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping for better responsiveness */
@@ -59,7 +64,6 @@ footer {
     gap: 20px; /* Add consistent spacing between elements */
     margin-bottom: 40px;
 }
-
 .section figure {
     flex: 1 1 300px; /* Allow the figure to take up space and shrink if needed */
     max-width: 40%; /* Limit the width */
@@ -69,14 +73,12 @@ footer {
     align-items: center; /* Center-align the image and caption */
     text-align: center; /* Center-align text within the figure */
 }
-
 .section figure img {
     width: 100%; /* Make the image responsive */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Optional: rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow for style */
 }
-
 .big-fig figure img{
     display: flex;
     flex-direction: column;
@@ -87,18 +89,63 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .section .text {
     flex: 2; /* Allow the text to take up more space */
     min-width: 300px; /* Ensure text doesn't shrink too much */
 }
-
 figcaption {
     color: rgb(128, 128, 128); /* Lighter gray for the caption */
     font-size: 0.9em; /* Slightly smaller font size */
     margin-top: 10px; /* Add space above the caption */
 }
+
 .pdf {
     width: 100%;
     aspect-ratio: 4 / 3;
+}
+
+/* For "Contact Me" page" */
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.button-submit {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.button-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Message page pop ups*/
+.popup {
+    text-align: center;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.face {
+    font-size: 100px;
+}
+.message {
+    font-size: 24px;
+    margin: 20px 0;
+}
+.home-link {
+    font-size: 18px;
+    text-decoration: none;
+    color: #007BFF;
 }
