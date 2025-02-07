@@ -1,8 +1,11 @@
 from flask import Blueprint, current_app, render_template, request, abort, flash
-from .contact_form import ContactForm
-import requests
+from .form_support import ContactForm, send_mail, recaptcha_check_v3
 
 views = Blueprint("views", __name__)
+
+@views.context_processor
+def inject_site_key():
+    return dict(site_key=current_app.config['RECAPTCHA_PUBLIC_KEY_V3'])
 
 @views.route('/')
 @views.route('/home')
@@ -22,59 +25,52 @@ def send_msg(sender_email:str, subject:str, message:str):
     print(subject)
     print(message)
 
-    return
+    return True
 
 @views.route('/contact_info', methods=['GET','POST'])
 def contact_info():
     form = ContactForm()
-    reCAPTCHA_site_key = current_app.config.get('RECAPTCHA_PUBLIC_KEY_V3')
 
+    # Check valid inputs for bot behavior and send mail
     if form.validate_on_submit():
         # Honeypot fields
         honeypot1 = form.name.data
         honeypot2 = form.job_role.data
-        # print(honeypot1)
-        # print(honeypot2)
-
         if (honeypot1 or honeypot2):
+            flash("Hideen field used! Suspicous behavior detected.", category="error")
             abort(401)
 
         # Verify reCAPTCHA v3 score
-        reCAPTCHA_secret_key = current_app.config.get('RECAPTCHA_PRIVATE_KEY_V3')
+        secret_key = current_app.config.get('RECAPTCHA_PRIVATE_KEY_V3')
         verify_url = current_app.config.get('VERIFY_URL')
-        recaptcha_token = request.form.get("g-recaptcha-response")
-        print(recaptcha_token)
-        recaptcha_response = requests.post(
-            verify_url,
-            data={
-                "secret": reCAPTCHA_secret_key,
-                "response": recaptcha_token
-            }
-        ).json()
-
-        # Check if reCAPTCHA validation was successful
-        print(recaptcha_response)
-        if not (recaptcha_response.get("success") and recaptcha_response.get("score", 0) > 0.5):
+        recaptcha_token = request.form.get("g-recaptcha-response-v3") # Grab v3 token from contact-form
+        if not recaptcha_check_v3(recaptcha_token, secret_key, verify_url):
             flash("reCAPTCHA verification failed. Suspicous behavior detected.", category="error")
             abort(401)
             
-
         # Necessary fields
         sender_email = form.email.data
         subject = form.subject.data
         message = form.message.data
-
-        if send_msg(sender_email,subject, message):
+        if send_mail(sender_email,subject, message):
             flash("Form submitted successfully!", category="success")
             return render_template('6_sent_successfully.html')
         else:
-           return render_template('7_send_failed.html') 
+            return render_template('7_send_failed.html')
+    # Explain why the form was considered invalid to the user
     elif form.errors:
-        print(form.errors)
         for field, errors in form.errors.items():
             for error in errors:
                 flash(f'Error with "{field}". {error}', category="error")
-    #     return render_template('7_send_failed.html')
     
-    return render_template('5_contact_info.html', form=form, reCAPTCHA_site_key=reCAPTCHA_site_key)
-    
+    return render_template('5_contact_info.html', form=form)
+
+@views.route('/test_email')
+def test_email():
+    return_email = "test@email.com"
+    subject = "Test Contact Form"
+    message = "Testing the contact form"
+    if send_mail(return_email,subject,message):
+        return render_template('6_sent_successfully.html')
+    else:
+        return render_template('7_send_failed.html')

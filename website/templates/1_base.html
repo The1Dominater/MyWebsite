@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1"/>
+        <title>{% block title %}Home{% endblock %}</title>
+
+        <!-- Website styling -->
         <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -31,8 +33,14 @@
             href="{{ url_for('static', filename='favicon.ico') }}" 
             type="image/x-icon"
         />
+
+        <!-- Imported scripts-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://www.google.com/recaptcha/enterprise.js?render={{ site_key }}"></script>
+        <script src="{{ url_for('static', filename='index.js') }}" type="Text/javascript"></script>
   
-      <title>{% block title %}Home{% endblock %}</title>
     </head>
     <body>
         <header>
@@ -106,28 +114,6 @@
                     <i class="fa-solid fa-envelope" style="font-size: 24px; color: white;"></i>
                 </a>
             </p>
-        </footer>
-        
-        <script
-            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"
-        ></script>
-        <script src="https://www.google.com/recaptcha/api.js"></script>
-        <script 
-            type="Text/javascript"
-            src="{{ url_for('static', filename='index.js')}}"
-        ></script>
-        
+        </footer>       
     </body>
 </html>

@@ -1,14 +1,11 @@
 {% extends "1_base.html" %} {% block title %} Contact Me {% endblock %}
 
 {% block content %}
-<head>
-    <script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"></script>
-</head>
 <div>
     <h1 style="margin-left: 0; font-size: 3.0em;"><strong>Contact Me</strong></h1>
 </div>
 <div style="width: 80%;">
-    <form id="contact_form" method="POST">
+    <form id="contact-form" method="POST">
         {{ form.hidden_tag() }} {# This includes the CSRF token automatically #}
         <div style="display: none; visibility: hidden;">
             <label for="name">Name*</label>
@@ -22,8 +19,7 @@
             <label for="subject">Subject</label>
             {{ form.subject(autocomplete="off", placeholder="Reason for Message (optional)") }}
         </div>
-        <div style="display: none; visibility: hidden;">
-            <label for="job_role">Job Role</label>
+        <div>
             {{ form.job_role(autocomplete="off", placeholder="Job Role") }}
         </div>
         <div>
@@ -31,22 +27,29 @@
             {{ form.message(autocomplete="off", rows=5, placeholder="Your message here...") }}
         </div>
         <div>
-            {{ form.recaptcha() }}
-            <!-- Hidden input for reCAPTCHA response -->
-            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+            <input type="hidden" id="g-recaptcha-response-v3" name="g-recaptcha-response-v3" value="token"/>
         </div>
         <div>
+            {{ form.recaptcha() }}
             {{ form.submit() }}
         </div>
     </form>
 </div>
-<div>
-    <script>
-        grecaptcha.ready(function() {
-            grecaptcha.execute(`{{ recaptcha_site_key }}`, { action: "submit" }).then(function(token) {
-                document.getElementById("g-recaptcha-response").value = token;
-            });
+<script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        // Prevent the submit
+        event.preventDefault();
+
+        // Get the recatpcha verification token
+        grecaptcha.enterprise.ready(async () => {
+            const token = await grecaptcha.enterprise.execute(`{{ site_key }}`, {action: 'submit'});
+            const recapthca_v3 = document.getElementById('g-recaptcha-response-v3');
+            recapthca_v3.value = token;
+            console.log("Token set: " + recapthca_v3.value);
+            // Submit the form manually
+            const contact_form = document.getElementById("contact-form")
+            HTMLFormElement.prototype.submit.call(contact_form);
         });
-    </script>
-</div>
+    })
+</script>
 {% endblock %}
