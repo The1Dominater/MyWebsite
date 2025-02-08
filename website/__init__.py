@@ -4,7 +4,7 @@ import os
 from flask_mail import Mail
 from env_storage import decrypt
 
-SECRET_KEY = os.environ.get("MY_WEBSITE_SECRET_KEY")
+SECRET_KEY = "5MFX2Ms5gshQxi2xqzA7_SBvSuKCAvPF"
 
 def create_app():
     app = Flask(__name__)

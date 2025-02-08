@@ -4,3 +4,5 @@ flask-wtf
 wtforms[email]
 gunicorn
 python-dotenv
+cryptography
+requests
