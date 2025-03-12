@@ -11,4 +11,4 @@ Here is a screenshot of how the My Resume page looks when the website is running
 
 ### How to Access
 I setup this website to run using a custom domain name using No-IP's free 1 free domain name
-option. Visit this URL: [dwg.serverhttp.com](http://dwg.serverhttp.com)
+option. Visit this URL: [dwg.servehttp.com](http://dwg.servehttp.com)
