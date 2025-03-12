@@ -11,7 +11,7 @@ body {
 }
 /* Add a shadow effect to the navbar */
 .navbar {
-    background-color: #333;
+    background-color: #0f8090;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 10px 20px;
 }
@@ -48,7 +48,7 @@ body {
     padding: 20px;
 }
 footer {
-    background-color: #333;
+    background-color: #0f8090;
     color: white;
     margin-top: auto;
     padding: 10px 0;
@@ -99,11 +99,6 @@ figcaption {
     margin-top: 10px; /* Add space above the caption */
 }
 
-.pdf {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-}
-
 /* For "Contact Me" page" */
 label {
     display: block;
@@ -116,15 +111,15 @@ input, textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-.button-submit {
+.button-download {
     padding: 10px 15px;
-    background-color: #007BFF;
+    background-color:#0f8090;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
-.button-submit:hover {
+.button-download:hover {
     background-color: #0056b3;
 }
 
@@ -148,4 +143,15 @@ input, textarea {
     font-size: 18px;
     text-decoration: none;
     color: #007BFF;
+}
+
+.resume img {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align the image and caption */
+    text-align: center;
+    width: 100%;
+    height: auto; 
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
