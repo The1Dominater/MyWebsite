@@ -1,4 +1,4 @@
-from website import create_app
+from website_flask import create_app
 
 # Create the app using the __init__.py file
 # Must be outside if statement for gunicorn to access app obj

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1"/>
+        <title>Home</title>
+
+        <!-- Website styling -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            crossorigin="anonymous"
+        />
+        <link 
+            rel="stylesheet" 
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&display=swap"
+        />
+        <link 
+            rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link 
+            rel="stylesheet" 
+            href="./static/styles.css"
+        />
+        <link 
+            rel="icon" 
+            href="./static/favicon.ico" 
+            type="image/x-icon"
+        />
+
+        <!-- Imported scripts-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://www.google.com/recaptcha/enterprise.js?render={{ site_key }}"></script>
+        <script src="{{ url_for('static', filename='index.js') }}" type="Text/javascript"></script>
+  
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark shadow-lg">
+                <a class="navbar-brand d-flex align-items-center" href="/home">
+                    <img src="./static/images/PKLogo.png" alt="Company Logo" width="40" height="40" class="mr-2">
+                    <span>DWG</span>
+                </a>
+                <button 
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-toggle="collapse" 
+                    data-target="#navbar"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-item nav-link" id="home" href="index.html">About Me</a>
+                        <a class="nav-item nav-link" id="resume" href="resume.html">Resume</a>
+                        <a class="nav-item nav-link" id="portfolio" href="portfolio.html">Portfolio</a>
+                        <a class="nav-item nav-link" id="contact" href="contact.html">Contact Me</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <br>
+                <div class="container">
+                    <div class="section">
+                        <figure>
+                            <img src="./static/images/BoatWithVince.jpg" alt="BoatWithVince.jpg">
+                            <figcaption>My brother Vince and I on our Dad's fishing boat (June 2023)</figcaption>
+                        </figure>
+                        <div class="text">
+                            <h2><strong>The Fam</strong>👨‍👦‍👧‍👩‍👧‍👦</h2>
+                            <p>
+                                Born and raised in Colorado, I am the oldest of four siblings. 
+                                We have two dogs, Daisy and Stubby, and a couple of chickens in the coop in our backyard. 
+                                My mom is a school nurse and my dad is a contractor and a commercial fisherman in the summer. 
+                                My youngest sister Maggie, a.k.a. GG, is a crazy good horseback rider who does all sorts of stunts with the <i>Westernaires</i>.
+                            </p>
+                            <p>
+                                Since 2016 I have travelled to Alaska each summer to commercially fish for sockeye salmon 🐟. 
+                                My dad runs his own boat, <i>The High Flyer</i>, a 32-foot aluminum bow-picker, in the Nushagak River just above the Aleutian Island chain. 
+                                In the picture, Vince, my younger brother, and I have just finished setting out the 300-yard gillnet. 
+                                Commercial fishing in Alaska has been a great experience for me, as it taught me how rewarding hard work can be (It also helped that it paid my college tuition off!). 
+                                However, now that I have graduated, my time on the boat has come to an end, and my younger sister Natalie has already replaced me 😢!
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="section">
+                        <div class="text">
+                            <h2><strong>My Journey in Computer Science</strong>👨‍💻</h2>
+                            <p>
+                                When I started my degree in Computer Science at <i>Regis University</i>, all I really wanted was to make <i>Minecraft</i> mods and only went to school based on my parents' advice. 
+                                After getting past the introductory courses, my interest peaked while taking classes like computational theory, operating systems, and paradigms of programming languages.
+                            </p>
+                            <p>
+                                Realizing Regis's Computer Science department was limited by its size, I transferred to <i>CU Boulder</i> to gain access to a greater variety of courses and teaching experience. 
+                                At CU I took introductory courses in quantum computing, robotics, cyber-security, and bio-networking. 
+                                However, I enjoyed system administration and data center computing the most because they involved problem solving and managing systems at a massive scale(Simply put [Super Computers == cool] evaluates to True).
+                            </p>
+                        </div>
+                        <figure>
+                            <img src="./static/images/CUEngineeringExpo.jpg" alt="CUEngineeringExpo.jpg">
+                            <figcaption>My senior project team and I presenting our design for software based PUF IDs (May 2024).</figcaption>
+                        </figure>
+                    </div>
+                
+                    <div class="section">
+                        <figure>
+                            <img src="./static/images/NRELWindTurbine.jpg" alt="NRELWindTurbine.jpg">
+                            <figcaption>Me standing in front of the a decomissioned wind turbine blade at NREL's test site in Boulder, CO (July 2024)</figcaption>
+                        </figure>
+                        <div class="text">
+                            <p>
+                                During my senior year at CU, I worked with <i>FESTO</i> and senior project team to develop a software based system for generating unique ids for a specific device based on irreplicable defects in the device's memory. 
+                                The idea was to pull initialized binary values from the device's memory on startup and plug them into a <i>Physically Unclonable Function</i>(PUF) in order to generate a unique id which could only be generated by the given device. 
+                                Then it would send the id to a web based Solidity contract where a business or organization could grant the device access to their service(s) or system(s). 
+                                I learned a lot about planning and building, and then re-planning when everything went wrong🔥📉🤔.                
+                            </p>
+                            <p>
+                                Most recently, I interned with the <i>National Renewable Energy Laboratory</i> through the <i>SULI</i> program. 
+                                I worked within the <i>Power Systems Engineering Center</i> to help develop a LLM for analyzing power system questions a utility company may face and assist the utility operators in addressing the problem. 
+                                My mentor, Rishab Jain, and I focused on developing an multi-agent AI system where each AI agent was an expert in a specific domain, such as system maintenance, cost analysis, and human comfort. 
+                                The expert agents then would bounce ideas off each other in an attempt to build a more robust and thought out solution.
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="section">
+                        <figure>
+                            <img src="./static/images/GoodbyeGekko.gif" alt="GoodbyeGekko.gif">
+                            <figcaption>A clip of me playing one of my favorite games Valorant</figcaption>
+                        </figure>
+                        <div class="text">
+                            <h2><strong>Interests</strong>🎮⛷️🍝</h2>
+                            <p>
+                                I love video games, especially FPS like <i>Valorant</i>, <i>Tarkov</i>, and <i>Arma</i>; however, I also have enjoyed playing
+                                various adventure and story games like <i>Cities: Skylines</i>, <i>It Takes Two</i>, and <i>STAR WARS Jedi: Fallen Order</i>.
+                                It's always fun to hop on an play with friends and kick some ass (but we lose a lot 😔). 
+                            </p>
+                            <p>
+                                My other interests include building LEGOs, skiing with the fam, watching movies with friends,
+                                and eating pretty much anything(but especially Italian food).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <br>
+        </div>
+
+        <footer>
+            <p>Built by Dominic Galgano</p>
+            <p>
+                <a href="https://github.com/The1Dominater" target="_blank">
+                    <i class="fa-brands fa-github" style="font-size: 24px; color: white;"></i>
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://www.linkedin.com/in/dominic-galgano-97128b156/" target="_blank">
+                    <i class="fa-brands fa-linkedin" style="font-size: 24px; color: white;"></i>
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/contact_info" target="_blank">
+                    <i class="fa-solid fa-envelope" style="font-size: 24px; color: white;"></i>
+                </a>
+            </p>
+        </footer>       
+    </body>
+</html>
