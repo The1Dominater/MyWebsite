@@ -1,6 +1,8 @@
 # My Personal Website
 Built by Dominic Galgano
+
 Hosted by GitHub Pages
+
 DNS subdomain provided by [freedns.afraid.org](https://freedns.afraid.org)
 
 ### Description
