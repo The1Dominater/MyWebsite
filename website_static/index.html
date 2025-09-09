@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1"/>
-        <title>Resume</title>
+        <title>Dominic Galgano's Website</title>
 
         <!-- Website styling -->
         <link
@@ -30,73 +30,53 @@
         />
         <link 
             rel="icon" 
-            href="./static/favicon.ico" 
+            href="/static/favicon.ico" 
             type="image/x-icon"
         />
         <!-- Imported scripts-->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="/static/index.js"></script>
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark shadow-lg">
-                <a class="navbar-brand d-flex align-items-center" href="/index.html">
-                    <img src="./static/images/PersonalLogo.png" alt="Company Logo" width="40" height="40" class="mr-2">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand d-flex align-items-center" href="/home.html" onclick="loadPage('home.html'); return false;">
+                    <img src="./static/images/PersonalLogo.png" alt="Company Logo">
                 </a>
-                <button 
-                    class="navbar-toggler" 
-                    type="button" 
-                    data-toggle="collapse" 
-                    data-target="#navbar"
-                >
-                    <span class="navbar-toggler-icon"></span>
+                <button text="" class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar">
+                    <i class="fa-solid fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
                     <div class="navbar-nav ml-auto">
-                        <a class="nav-item nav-link" id="home" href="index.html">About Me</a>
-                        <a class="nav-item nav-link" id="resume" href="resume.html">Resume</a>
-                        <a class="nav-item nav-link" id="portfolio" href="portfolio.html">Portfolio</a>
-                        <a class="nav-item nav-link" id="contact" href="contact.html">Contact Me</a>
+                        <a class="nav-item nav-link" id="home" href="/home.html" onclick="loadPage('home.html'); return false;">Home</a>
+                        <a class="nav-item nav-link" id="resume" href="/resume.html" onclick="loadPage('resume.html'); return false;">Resume</a>
+                        <a class="nav-item nav-link" id="portfolio" href="/portfolio.html" onclick="loadPage('portfolio.html'); return false;">Portfolio</a>
+                        <a class="nav-item nav-link" id="contact" href="/contact.html" onclick="loadPage('contact.html'); return false;">Contact Me</a>
                     </div>
                 </div>
             </nav>
         </header>
 
-        <div class="container">
-            <br>
-                <div>
-                    <h1 style="margin-left: 0; font-size: 3.0em;"><strong>My Résumé</strong></h1>
-                    <p style="text-align: center;">Last Updated: 3/12/2025</p>
-                </div>
-                <div class="resume">
-                    <img src="./static/images/MyResume.png"/>
-                </div>
-                <div>
-                    <br/>
-                    <a href="./static/files/MyResume.pdf" download="MyResume.pdf">
-                        <button class="button-download">Download Resume</button>
-                    </a>
-                </div>
-            <br>
-        </div>
+        <main id="content"></main>
 
         <footer>
             <p>Built by Dominic Galgano</p>
             <p>
-                <a href="https://github.com/The1Dominater" target="_blank">
-                    <i class="fa-brands fa-github" style="font-size: 24px; color: white;"></i>
+                <a href="https://github.com/The1Dominater" target="_blank" class="footer-item">
+                    <i class="fa-brands fa-github"></i>
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://www.linkedin.com/in/dominic-galgano-97128b156/" target="_blank">
-                    <i class="fa-brands fa-linkedin" style="font-size: 24px; color: white;"></i>
+                <a href="https://www.linkedin.com/in/dominic-galgano/" target="_blank" class="footer-item">
+                    <i class="fa-brands fa-linkedin"></i>
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="contact.html" target="_blank">
-                    <i class="fa-solid fa-envelope" style="font-size: 24px; color: white;"></i>
+                <a href="/contact.html" target="_blank" class="footer-item" onclick="loadPage('contact.html'); return false;">
+                    <i class="fa-solid fa-envelope"></i>
                 </a>
             </p>
-        </footer>      
+        </footer>
     </body>
 </html>

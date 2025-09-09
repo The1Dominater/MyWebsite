@@ -1,0 +1,164 @@
+/* For base template */
+html, body {
+    height: 100%; /* Ensure the full height is taken up */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack content and footer */
+}
+.header {
+    
+}
+/* Style the navbar */
+.navbar {
+    background-color: black;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+.navbar-toggler {
+  color: white;
+}
+.navbar-brand img {
+    border-radius: 50%; /* Optional: Make the logo circular */
+    width: 50px; /* Adjust logo size */
+    height: 50px;
+}
+.navbar-nav .nav-link {
+    font-size: 1.25rem;
+    margin-left: auto;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+}
+.navbar-nav .nav-link:hover {
+    color: rgb(95, 95, 95); /* Add a hover effect color*/
+}
+footer {
+    background-color: black;
+    color: white;
+    margin-top: auto;
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: 0 -12px 24px rgba(0, 0, 0, 0.4);
+}
+.footer-item {
+    font-size: 1.7rem; 
+    color: white;
+}
+.footer-item:hover {
+    color: rgb(95, 95, 95);
+    text-decoration: none;
+}
+
+/* For general content on pages */
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    padding: 20px;
+}
+.page-title {
+    margin-left: 0;
+    font-size: 3.0em;
+    font-weight: bold;
+}
+
+/* For "Home" page */
+.section {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for better responsiveness */
+    align-items: flex-start;
+    gap: 20px; /* Add consistent spacing between elements */
+    margin-bottom: 40px;
+}
+.section figure {
+    flex: 1 1 300px; /* Allow the figure to take up space and shrink if needed */
+    max-width: 40%; /* Limit the width */
+    margin: 0; /* Remove default margins */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align the image and caption */
+    text-align: center; /* Center-align text within the figure */
+}
+.section figure img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow for style */
+}
+.section .text {
+    flex: 2; /* Allow the text to take up more space */
+    min-width: 300px; /* Ensure text doesn't shrink too much */
+}
+figcaption {
+    color: rgb(128, 128, 128); /* Lighter gray for the caption */
+    font-size: 0.9em; /* Slightly smaller font size */
+    margin-top: 10px; /* Add space above the caption */
+}
+
+/* For "Resume" page */
+.resume img {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align the image and caption */
+    text-align: center;
+    width: 100%;
+    height: auto; 
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.button-dark {
+    padding: 10px 15px;
+    background-color: rgb(35, 35, 35);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.button-dark:hover {
+    background-color: rgb(116, 116, 116);
+}
+
+/* For "Portfolio" page */
+#repo-list {
+  height: 100%;
+  margin: 0;
+  padding: 20px;
+  overflow-y: auto;
+  border: 1px solid black;
+}
+
+/* For "Contact Me" page" */
+.contact-form {
+    flex: 1; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    min-width: 300px;
+    width: 100%;
+    font-size: 1rem;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.profile-pic { 
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    object-fit: cover;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}

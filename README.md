@@ -11,5 +11,5 @@ This is the code I use to run my personal website. There are two versions I have
 I setup this website to run using a custom domain name I purchased. Visit this URL: [galganos.us](https://galganos.us) to interact with it.
 
 ### Preview
-![DWGPreview.png](./DWGPreview.png)
-Here is a screenshot from my website's home page
+Here is a screenshot from my website's home page:
+![MyWebsitePreview.png](./MyWebsitePreview.png)
