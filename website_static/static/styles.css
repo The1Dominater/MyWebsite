@@ -9,9 +9,6 @@ body {
     display: flex;
     flex-direction: column; /* Stack content and footer */
 }
-.header {
-    
-}
 /* Style the navbar */
 .navbar {
     background-color: black;
