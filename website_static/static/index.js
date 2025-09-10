@@ -1,3 +1,7 @@
+/* 
+*  Yeah I know this whole this is a sin against web development,
+*  but its makes it so easy to host it as static content
+*/
 console.log("Loaded JS")
 
 // Allows for static website to use index.html as a template
@@ -28,10 +32,24 @@ window.onload = () => {
   loadPage(last);
 };
 
+// Reset to home page if someone closes the tab
+var show_close_alert = true;
+$("a").bind("mouseup", function() {
+    show_close_alert = false;
+});
+$("form").bind("submit", function() {
+    show_close_alert = false;
+});
+
+$(window).bind("beforeunload", function() {
+    if (show_close_alert) {
+        localStorage.setItem("lastPage", "home.html");
+    }
+});
+
 // Load a list of the top 5 repos on my github
 const username = "The1Dominater";
 async function loadTopRepos(username, { sortBy = 'stars' } = {}) {
-    console.log("Fetching repos")
     const list = document.getElementById('repo-list');
     const url = `https://api.github.com/users/${encodeURIComponent(username)}/repos?type=owner&per_page=100&sort=updated`;
 
@@ -113,15 +131,15 @@ emailjs.init({
 function contactMe(e) {
   //e.preventDefault();
   
-  console.log("Attempting to send email...")
-  emailjs.sendForm('mywebsite-contactform', 'template_8ntibaq', e.target.form).then(
-    (response) => {
-      console.log('SUCCESS!', response.status, response.text);
-    },
-    (error) => {
-      console.log('FAILED...', error);
-    },
-  );
+  console.log("Sending email...")
+  // emailjs.sendForm('mywebsite-contactform', 'template_8ntibaq', e.target.form).then(
+  //   (response) => {
+  //     console.log('SUCCESS!', response.status, response.text);
+  //   },
+  //   (error) => {
+  //     console.log('FAILED...', error);
+  //   },
+  // );
 
 }
 
