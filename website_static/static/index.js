@@ -43,7 +43,7 @@ $("form").bind("submit", function() {
 
 $(window).bind("beforeunload", function() {
     if (show_close_alert) {
-        localStorage.setItem("lastPage", "home.html");
+      localStorage.setItem("lastPage", "home.html");
     }
 });
 
@@ -132,14 +132,14 @@ function contactMe(e) {
   //e.preventDefault();
   
   console.log("Sending email...")
-  // emailjs.sendForm('mywebsite-contactform', 'template_8ntibaq', e.target.form).then(
-  //   (response) => {
-  //     console.log('SUCCESS!', response.status, response.text);
-  //   },
-  //   (error) => {
-  //     console.log('FAILED...', error);
-  //   },
-  // );
+  emailjs.sendForm('mywebsite-contactform', 'template_8ntibaq', e.target.form).then(
+    (response) => {
+      console.log('SUCCESS!', response.status, response.text);
+    },
+    (error) => {
+      console.log('FAILED...', error);
+    },
+  );
 
 }
 
