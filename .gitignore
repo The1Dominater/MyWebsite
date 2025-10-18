@@ -2,4 +2,3 @@
 **/__pycache__/
 .env*
 env_storage.py
-test.py
