@@ -1,4 +1,4 @@
-console.log("Loaded JS")
+console.log("Load https://galganos.us/static/index.js")
 
 // Allows for static website to use index.html as a template
 function loadPage(page) {
@@ -28,7 +28,7 @@ window.onload = () => {
   loadPage(last);
 };
 
-//<<<<<<< HEAD
+
 // Reset to home page if someone closes the tab
 var show_close_alert = true;
 $("a").bind("mouseup", function() {
@@ -44,8 +44,6 @@ $(window).bind("beforeunload", function() {
     }
 });
 
-//=======
-//>>>>>>> parent of 1c3efbf (Update resume download)
 // Load a list of the top 5 repos on my github
 const username = "The1Dominater";
 async function loadTopRepos(username, { sortBy = 'stars' } = {}) {
@@ -130,18 +128,15 @@ emailjs.init({
 
 function contactMe(e) {
   //e.preventDefault();
-  
-//<<<<<<< HEAD
+
   console.log("Sending email...")
-//=======
   console.log("Attempting to send email...")
-//>>>>>>> parent of 1c3efbf (Update resume download)
   emailjs.sendForm('mywebsite-contactform', 'template_8ntibaq', e.target.form).then(
     (response) => {
-      console.log('SUCCESS!', response.status, response.text);
+      console.log('Send email SUCCEEDED!', response.status, response.text);
     },
     (error) => {
-      console.log('FAILED...', error);
+      console.log('Send email FAILED!', error);
     },
   );
 
