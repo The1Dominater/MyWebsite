@@ -28,7 +28,7 @@ window.onload = () => {
   loadPage(last);
 };
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 // Reset to home page if someone closes the tab
 var show_close_alert = true;
 $("a").bind("mouseup", function() {
@@ -44,8 +44,8 @@ $(window).bind("beforeunload", function() {
     }
 });
 
-=======
->>>>>>> parent of 1c3efbf (Update resume download)
+//=======
+//>>>>>>> parent of 1c3efbf (Update resume download)
 // Load a list of the top 5 repos on my github
 const username = "The1Dominater";
 async function loadTopRepos(username, { sortBy = 'stars' } = {}) {
@@ -131,11 +131,11 @@ emailjs.init({
 function contactMe(e) {
   //e.preventDefault();
   
-<<<<<<< HEAD
+//<<<<<<< HEAD
   console.log("Sending email...")
-=======
+//=======
   console.log("Attempting to send email...")
->>>>>>> parent of 1c3efbf (Update resume download)
+//>>>>>>> parent of 1c3efbf (Update resume download)
   emailjs.sendForm('mywebsite-contactform', 'template_8ntibaq', e.target.form).then(
     (response) => {
       console.log('SUCCESS!', response.status, response.text);
